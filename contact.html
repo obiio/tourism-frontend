@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — TerraVista</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/styles.css" />
+  <link rel="icon" href="/static/img/favicon.png">
+</head>
+<body>
+<header class="site-header glass">
+  <div class="container header-inner">
+    <a class="brand" href="/">
+      <img src="/static/img/logo.svg" alt="TerraVista" class="brand-logo" width="32" height="32" />
+      <span class="brand-name">TerraVista</span>
+    </a>
+    <nav class="nav">
+      <a href="/explore.html" class="nav-link">Explore</a>
+      <a href="/contact.html" class="nav-link">Contact</a>
+    </nav>
+    <div class="actions">
+      <a href="/signup.html" class="btn btn-primary">Get started</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main class="container">
+  <h1 class="section-title">Contact us</h1>
+  <div class="two-col">
+    <form class="form-grid glass" style="padding:16px; border-radius:16px">
+      <label class="field">
+        <span class="label">Name</span>
+        <input type="text" required />
+      </label>
+      <label class="field">
+        <span class="label">Email</span>
+        <input type="email" required />
+      </label>
+      <label class="field" style="grid-column:1/-1">
+        <span class="label">Message</span>
+        <textarea rows="6" required></textarea>
+      </label>
+      <button class="btn btn-primary">Send</button>
+    </form>
+    <div class="glass" style="padding:16px; border-radius:16px">
+      <h3>Support</h3>
+      <p class="muted">24/7 chat support available for urgent issues.</p>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container copy muted">© <span id="year"></span> TerraVista</div>
+</footer>
+
+<script src="/static/js/app.js" type="module"></script>
+</body>
+</html>

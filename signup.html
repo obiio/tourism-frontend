@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign up — TerraVista</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/styles.css" />
+  <link rel="icon" href="/static/img/favicon.png">
+</head>
+<body>
+  <div class="auth-wrap">
+    <div class="auth-card">
+      <div class="auth-content">
+        <a class="brand" href="/">
+          <img src="/static/img/logo.svg" alt="TerraVista" class="brand-logo" width="32" height="32" />
+          <span class="brand-name">TerraVista</span>
+        </a>
+        <h1 class="section-title" style="margin-top:12px">Create your account</h1>
+        <p class="muted">Join as a tourist or owner and start your journey.</p>
+
+        <form id="signup-form" class="form-grid" autocomplete="on">
+          <label class="field">
+            <span class="label">Full name</span>
+            <input type="text" name="name" required placeholder="Alex Smith" />
+          </label>
+          <label class="field">
+            <span class="label">Email</span>
+            <input type="email" name="email" required placeholder="you@example.com" />
+          </label>
+          <label class="field">
+            <span class="label">Password</span>
+            <input type="password" name="password" required placeholder="Create a strong password" />
+          </label>
+          <div class="role-select">
+            <label class="role"><input type="radio" name="role" value="tourist" checked> Tourist</label>
+            <label class="role"><input type="radio" name="role" value="owner"> Owner</label>
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-primary btn-lg" type="submit">Create account</button>
+            <span class="form-hint">Have an account? <a href="/login.html">Log in</a></span>
+          </div>
+        </form>
+      </div>
+      <div class="auth-side"></div>
+    </div>
+  </div>
+  <script src="/static/js/app.js" type="module"></script>
+</body>
+</html>

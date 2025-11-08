@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explore — TerraVista</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/styles.css" />
+  <link rel="icon" href="/static/img/favicon.png">
+</head>
+<body>
+  <header class="site-header glass">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <img src="/static/img/logo.svg" alt="TerraVista" class="brand-logo" width="32" height="32" />
+        <span class="brand-name">TerraVista</span>
+      </a>
+      <nav class="nav">
+        <a href="/explore.html" class="nav-link">Explore</a>
+        <a href="/login.html" class="nav-link">Login</a>
+        <a href="/signup.html" class="nav-link">Sign up</a>
+      </nav>
+      <div class="actions">
+        <a href="/owners.html" class="btn btn-ghost">List your place</a>
+      </div>
+      <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 class="section-title">Explore destinations</h1>
+    <div class="search-card glass elevate">
+      <form class="search-grid" id="explore-filter">
+        <label class="field">
+          <span class="label">Keyword</span>
+          <input type="text" name="q" placeholder="Search by name or city" />
+        </label>
+        <label class="field">
+          <span class="label">Price</span>
+          <select name="price">
+            <option value="any">Any</option>
+            <option value="100">Under $100</option>
+            <option value="200">$100 - $200</option>
+            <option value="400">$200 - $400</option>
+          </select>
+        </label>
+        <label class="field">
+          <span class="label">Rating</span>
+          <select name="rating">
+            <option value="any">Any</option>
+            <option value="4.5">4.5+</option>
+            <option value="4.8">4.8+</option>
+          </select>
+        </label>
+        <button class="btn btn-primary">Filter</button>
+      </form>
+    </div>
+
+    <div class="grid cards" id="trending-grid"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container copy muted">© <span id="year"></span> TerraVista</div>
+  </footer>
+
+  <script src="/static/js/app.js" type="module"></script>
+</body>
+</html>

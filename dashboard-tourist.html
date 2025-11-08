@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tourist Dashboard — TerraVista</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/styles.css" />
+  <link rel="icon" href="/static/img/favicon.png">
+</head>
+<body>
+  <header class="site-header glass">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <img src="/static/img/logo.svg" alt="TerraVista" class="brand-logo" width="32" height="32" />
+        <span class="brand-name">TerraVista</span>
+      </a>
+      <nav class="nav">
+        <a href="/explore.html" class="nav-link">Explore</a>
+        <a href="/profile.html" class="nav-link">Profile</a>
+        <a href="/bookings.html" class="nav-link">Bookings</a>
+      </nav>
+      <div class="actions">
+        <button class="btn btn-ghost" onclick="localStorage.removeItem('tv_user'); location.href='/'">Logout</button>
+      </div>
+      <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="header-dash">
+      <h1 class="section-title">Welcome, <span id="u-name">Traveler</span></h1>
+      <div class="tabs-line">
+        <a href="#" class="active">Recommendations</a>
+        <a href="/explore.html">Explore</a>
+      </div>
+    </div>
+    <div class="kpis">
+      <div class="kpi">Upcoming trips: <strong>2</strong></div>
+      <div class="kpi">Saved: <strong>8</strong></div>
+      <div class="kpi">Messages: <strong>3</strong></div>
+      <div class="kpi">Loyalty: <strong>Gold</strong></div>
+    </div>
+
+    <div class="grid cards" id="tourist-recs"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container copy muted">© <span id="year"></span> TerraVista</div>
+  </footer>
+
+  <script src="/static/js/app.js" type="module"></script>
+  <script>
+    const u = JSON.parse(localStorage.getItem('tv_user')||'null');
+    if (u && u.name) document.getElementById('u-name').textContent = u.name;
+  </script>
+</body>
+</html>

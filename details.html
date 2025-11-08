@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Place Details — TerraVista</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/styles.css" />
+  <link rel="icon" href="/static/img/favicon.png">
+</head>
+<body>
+  <header class="site-header glass">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <img src="/static/img/logo.svg" alt="TerraVista" class="brand-logo" width="32" height="32" />
+        <span class="brand-name">TerraVista</span>
+      </a>
+      <nav class="nav">
+        <a href="/explore.html" class="nav-link">Explore</a>
+        <a href="/login.html" class="nav-link">Login</a>
+        <a href="/signup.html" class="nav-link">Sign up</a>
+      </nav>
+      <div class="actions">
+        <a href="/owners.html" class="btn btn-ghost">List your place</a>
+      </div>
+      <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="two-col">
+      <div>
+        <img id="detail-img" src="https://images.unsplash.com/photo-1508264165352-258a6c4dc581?q=80&w=1600&auto=format&fit=crop" alt="" style="border-radius:16px" />
+      </div>
+      <div>
+        <h1 class="section-title" id="detail-title">Destination</h1>
+        <p class="muted" id="detail-meta">4.9 • 120 reviews • $190/night</p>
+        <p>Escape to a world where nature meets comfort. Enjoy panoramic views, curated interiors, and unforgettable experiences.</p>
+        <div class="chips">
+          <span class="chip">Free Wi-Fi</span>
+          <span class="chip">Breakfast</span>
+          <span class="chip">Ocean View</span>
+        </div>
+        <div class="form-actions" style="margin-top:16px">
+          <button class="btn btn-primary" id="btn-book">Book now</button>
+          <a class="btn btn-ghost" href="#reviews">Read reviews</a>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="section-title" style="margin-top:28px">Similar places</h2>
+    <div class="grid cards" id="similar"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container copy muted">© <span id="year"></span> TerraVista</div>
+  </footer>
+
+  <script src="/static/js/app.js" type="module"></script>
+  <script>
+    // Simple population from query param
+    const params = new URLSearchParams(location.search);
+    const id = +params.get('id') || 6;
+    const list = (window.demoTrending || []);
+    const found = list.find(x => x.id === id) || list[5];
+    if (found){
+      document.getElementById('detail-img').src = found.img;
+      document.getElementById('detail-title').textContent = found.title;
+      document.getElementById('detail-meta').textContent = `${found.rating} • ${Math.floor(Math.random()*200)+40} reviews • $${found.price}/night`;
+    }
+    const sim = document.getElementById('similar');
+    if (sim && list.length){ sim.innerHTML = list.slice(0,4).map(p => cardTemplate(p)).join(''); $$('#similar img').forEach(lazyImg); }
+
+    document.getElementById('btn-book').addEventListener('click', () => {
+      const u = JSON.parse(localStorage.getItem('tv_user')||'null');
+      if (!u) return location.href = '/login.html';
+      alert('Demo booking confirmed!');
+    });
+  </script>
+</body>
+</html>

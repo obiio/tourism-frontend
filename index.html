@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TerraVista — Explore The World</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/styles.css" />
+  <link rel="icon" href="/static/img/favicon.png">
+  <meta name="description" content="TerraVista connects tourists with unforgettable destinations and owners of unique places. Discover, book, and manage listings with ease.">
+</head>
+<body>
+  <header class="site-header glass">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <img src="/static/img/logo.svg" alt="TerraVista" class="brand-logo" width="36" height="36" />
+        <span class="brand-name">TerraVista</span>
+      </a>
+      <nav class="nav">
+        <a href="#discover" class="nav-link">Discover</a>
+        <a href="#how" class="nav-link">How it works</a>
+        <a href="#testimonials" class="nav-link">Stories</a>
+        <a href="#download" class="nav-link">App</a>
+      </nav>
+      <div class="actions">
+        <a href="/login.html" class="btn btn-ghost">Log in</a>
+        <a href="/signup.html" class="btn btn-primary">Sign up</a>
+      </div>
+      <button class="burger" id="burger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1 class="display">Find your next unforgettable escape</h1>
+          <p class="lead">From hidden waterfalls to skyline rooftops, TerraVista helps you discover and book extraordinary places, with trusted reviews and seamless planning.</p>
+          <div class="search-card glass elevate">
+            <form id="quick-search" class="search-grid" action="/explore.html">
+              <label class="field">
+                <span class="label">Location</span>
+                <input type="text" name="q" placeholder="City, country or landmark" autocomplete="off" />
+              </label>
+              <label class="field">
+                <span class="label">Dates</span>
+                <input type="text" name="dates" placeholder="Any week" />
+              </label>
+              <label class="field">
+                <span class="label">Guests</span>
+                <input type="number" name="guests" min="1" value="2" />
+              </label>
+              <button class="btn btn-primary btn-lg" type="submit">Search</button>
+            </form>
+          </div>
+          <div class="hero-ctas">
+            <a class="btn btn-ghost" href="/owners.html">List your place</a>
+            <a class="btn btn-ghost" href="#how">Learn more</a>
+          </div>
+        </div>
+        <div class="hero-art">
+          <picture>
+            <source srcset="/static/img/hero@2x.webp 2x, /static/img/hero.webp 1x" type="image/webp">
+            <img src="/static/img/hero.jpg" alt="Tropical landscape" width="720" height="540" loading="eager" />
+          </picture>
+          <div class="floating-cards">
+            <div class="float-card">4.9⭐ Santorini</div>
+            <div class="float-card delay-2">Surf • Bali</div>
+            <div class="float-card delay-4">Aurora • Tromsø</div>
+          </div>
+        </div>
+      </div>
+      <div class="gradient-bottom" aria-hidden="true"></div>
+    </section>
+
+    <section id="discover" class="section container">
+      <h2 class="section-title">Trending now</h2>
+      <div class="grid cards" id="trending-grid">
+        <!-- Cards injected by JS with lazy images -->
+      </div>
+    </section>
+
+    <section id="how" class="section alt">
+      <div class="container two-col">
+        <div>
+          <h2 class="section-title">How TerraVista works</h2>
+          <ol class="steps">
+            <li><span class="badge">1</span> Explore curated destinations with advanced filters.</li>
+            <li><span class="badge">2</span> Book with flexible dates and instant confirmation.</li>
+            <li><span class="badge">3</span> Chat with hosts, plan trips, and manage itineraries.</li>
+          </ol>
+          <div class="chips">
+            <span class="chip">Secure payments</span>
+            <span class="chip">Verified hosts</span>
+            <span class="chip">24/7 support</span>
+            <span class="chip">Free cancellations</span>
+          </div>
+        </div>
+        <div class="illustration">
+          <img src="/static/img/how.svg" alt="How it works" width="520" height="380" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="section container">
+      <h2 class="section-title">Traveler stories</h2>
+      <div class="carousel" data-carousel>
+        <button class="carousel-btn prev" aria-label="Previous">‹</button>
+        <div class="carousel-track" id="stories-track">
+          <!-- Slides injected by JS -->
+        </div>
+        <button class="carousel-btn next" aria-label="Next">›</button>
+      </div>
+    </section>
+
+    <section id="download" class="section alt">
+      <div class="container callout">
+        <div>
+          <h2 class="section-title">Plan on the go</h2>
+          <p>Get our PWA for an app-like offline experience. Add to Home Screen on iOS/Android.</p>
+        </div>
+        <div class="store-badges">
+          <img src="/static/img/appstore.svg" alt="App Store" width="140" height="42" loading="lazy" />
+          <img src="/static/img/playstore.svg" alt="Google Play" width="140" height="42" loading="lazy" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand foot">
+          <img src="/static/img/logo.svg" class="brand-logo" width="28" height="28" alt="TerraVista">
+          <span class="brand-name">TerraVista</span>
+        </div>
+        <p class="muted">Explore. Book. Remember forever.</p>
+      </div>
+      <nav class="foot-nav">
+        <a href="/explore.html">Explore</a>
+        <a href="/owners.html">For Owners</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+      <div class="foot-actions">
+        <a href="/login.html" class="btn btn-ghost small">Log in</a>
+        <a href="/signup.html" class="btn btn-primary small">Get started</a>
+      </div>
+    </div>
+    <div class="container copy muted">© <span id="year"></span> TerraVista, Inc. All rights reserved.</div>
+  </footer>
+
+  <script src="/static/js/app.js" type="module"></script>
+</body>
+</html>

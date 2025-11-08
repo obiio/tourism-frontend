@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — TerraVista</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/styles.css" />
+  <link rel="icon" href="/static/img/favicon.png">
+</head>
+<body>
+<header class="site-header glass">
+  <div class="container header-inner">
+    <a class="brand" href="/">
+      <img src="/static/img/logo.svg" alt="TerraVista" class="brand-logo" width="32" height="32" />
+      <span class="brand-name">TerraVista</span>
+    </a>
+    <nav class="nav">
+      <a href="/explore.html" class="nav-link">Explore</a>
+      <a href="/about.html" class="nav-link">About</a>
+    </nav>
+    <div class="actions">
+      <a href="/signup.html" class="btn btn-primary">Get started</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main class="container">
+  <h1 class="section-title">About TerraVista</h1>
+  <p>TerraVista connects explorers with unique places around the world. We focus on trust, design, and ease of use.</p>
+  <div class="two-col">
+    <div class="glass" style="padding:16px; border-radius:16px">
+      <h3>Our mission</h3>
+      <p>Enable meaningful travel by empowering local hosts and delighting guests with thoughtful experiences.</p>
+    </div>
+    <div class="glass" style="padding:16px; border-radius:16px">
+      <h3>Values</h3>
+      <ul>
+        <li>Design for delight</li>
+        <li>Trust and safety first</li>
+        <li>Respect local communities</li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container copy muted">© <span id="year"></span> TerraVista</div>
+</footer>
+
+<script src="/static/js/app.js" type="module"></script>
+</body>
+</html>
